@@ -12,6 +12,11 @@ var mongoose = require('mongoose');
 var http = require('http');
 
 
+// seed database
+var databaseSeed = require('../seed');
+databaseSeed();
+
+
 // *** routes *** //
 var routes = require('./routes/index.js');
 var api = require('./routes/api.js');

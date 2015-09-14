@@ -32,10 +32,8 @@ router.post('/exercises', function(req, res, next){
 // UPDATE one exercise
 router.put('/exercise/:id', function(req, res, next){
   var query = {'_id':req.params.id};
-  console.log(req.params);
   var update = req.body;
   var options = {new: true};
-  console.log(update);
   Exercise.findOneAndUpdate(query, update, options, function(error, exercise){
     res.json({"UPDATED": exercise});
   });

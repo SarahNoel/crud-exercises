@@ -104,7 +104,6 @@ describe('Exercises', function() {
           .put('/api/v1/exercise/'+res.body[0]._id)
           .send({'name': 'Extra Practice'})
           .end(function(error, res){
-            console.log(res.body);
             res.should.have.status(200);
             res.should.be.json;
             res.body.should.be.a('object');
