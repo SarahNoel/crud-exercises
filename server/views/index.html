@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+
+
+
+
+  <div id = 'exerciseInfo'>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Exercise Name</th>
+          <th>Description</th>
+          <th>Tags</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody id='exerciseTable'>
+      </tbody>
+    </table>
+
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+  Add New Exercise
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Exercise</h4>
+      </div>
+      <div class="modal-body">
+
+        <form id='addExercise'>
+          <div class="form-group">
+            <label for="exerciseName">Exercise Name</label>
+            <input type="text" class="form-control" id="exerciseName" placeholder="jQuery Calculator" required>
+          </div>
+          <div class="form-group">
+            <label for="exerciseDescription">Exercise Description</label>
+            <input type="text" class="form-control" id="exerciseDescription" placeholder="Simple math calculator" required>
+          </div>
+          <div class="form-group">
+            <label for="exerciseTags">Exercise Tags</label>
+            <input type="text" class="form-control" id="exerciseTags" placeholder="Javascript, jQuery" required>
+          </div>
+          <button type="submit" class="btn btn-default"> Save Exercise</button>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id = 'updateExercise'>
+  <form id='editExercise'>
+    <div class="form-group">
+      <label for="updateName">Exercise Name</label>
+      <input type="text" class="form-control" id="updateName" required>
+    </div>
+    <div class="form-group">
+      <label for="updateDescription">Exercise Description</label>
+      <input type="text" class="form-control" id="updateDescription" required>
+    </div>
+    <div class="form-group">
+      <label for="updateTags">Exercise Tags</label>
+      <input type="text" class="form-control" id="updateTags" required>
+    </div>
+    <button type="submit" class="btn btn-default putExercise"> Update Exercise</button>
+  </form>
+  </div>
+
+
+  </div>
+
+{% endblock %}
